@@ -1,13 +1,13 @@
+const APILINK = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=a806c14c72dc8e8d26b5aeca0daab5d9&page=1';
 const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
-const API_LINK = "https://api.themoviedb.org/3/dicover/movie?sort_by=popularity.des&api_key=a806c14c72dc8e8d26b5aeca0daab5d9&page=1";
-const API_SEARCH = "https://api.themoviedb.org/3/dicover/movie?&api_key=a806c14c72dc8e8d26b5aeca0daab5d9&query=";
+const SEARCHAPI = "https://api.themoviedb.org/3/search/movie?&api_key=a806c14c72dc8e8d26b5aeca0daab5d9&query=";
 
 
 const main = document.getElementById("section");
 const form = document.getElementById("form");
 const search = document.getElementById("query");
 
-returnMovies(API_LINK)
+returnMovies(APILINK)
 function returnMovies(url){
   fetch(url).then(res => res.json())
   .then(function(data){
@@ -52,7 +52,7 @@ main.innerHTML = '';
 const searchItem = search.value;
 
 if (searchItem) {
-  returnMovies(API_SEARCH + searchItem);
+  returnMovies(SEARCHAPI + searchItem);
     search.value = "";
 }
 });
